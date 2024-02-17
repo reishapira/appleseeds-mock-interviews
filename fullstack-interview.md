@@ -212,7 +212,7 @@ We’ll pick a few topics here and discuss briefly
    1. What are some common types of databases used in the backend
    2. What factors might influence the choice of database for a particular project?
 4. **Middleware** - explain the concept of middleware in the context of Express.js. How does it work and what are some use cases for middleware?
-5. Async operations - what are asynchronous operations good for in Node.js? Can you think of an example of where this would come in handy?
+5. **Async operations** - what are asynchronous operations good for in Node.js? Can you think of an example of where this would come in handy?
 6. **RESTful API**
    1. What is RESTful API design, and why is it important in building scalable and maintainable web applications?
    2. Can you provide an example of designing a RESTful API endpoint?
