@@ -230,6 +230,13 @@ In this exercise, we will follow the principles of Test-Driven Development (TDD)
 
 TDD is a software development methodology that emphasizes writing tests before writing the implementation code. This approach helps ensure thorough testing, maintainable code, and improved overall software quality.
 
+**Project setup**
+
+```bash
+cd ./tdd-exercise
+npm install
+```
+
 #### Step 1: Understanding the Requirements
 
 Define the proposed interface for the Calculator class, which supports addition, subtraction, multiplication, division, and clearing functionality.
