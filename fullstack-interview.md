@@ -226,7 +226,7 @@ Question - What kind of UI improvements could we implement to mitigate time-cons
 
 ## TDD Unit Tests Exercise
 
-In this exercise, we will follow the principles of Test-Driven Development (TDD) to create a `Calculator` class. 
+In this exercise, we will follow the principles of Test-Driven Development (TDD) to create a `Calculator` class.
 
 TDD is a software development methodology that emphasizes writing tests before writing the implementation code. This approach helps ensure thorough testing, maintainable code, and improved overall software quality.
 
@@ -248,7 +248,7 @@ npm run test-calculator
 
 #### Step 4: Implementing the Code
 
-Write the simplest code that makes the failing tests pass. 
+Write the simplest code that makes the failing tests pass.
 
 Implement each operation iteratively based on failing tests, until all tests pass.
 
