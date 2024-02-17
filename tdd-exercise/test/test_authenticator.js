@@ -26,18 +26,30 @@ describe('UserAuthenticator', () => {
       authenticator.registerUser(registeredUsername, correctPassword)
     })
 
-    it('should not register a user with an existing username', () => {})
+    it('should not register a user with an existing username', () => {
+      // TODO
+    })
 
-    it('should log in a registered user with correct credentials', () => {})
+    it('should log in a registered user with correct credentials', () => {
+      // TODO
+    })
 
-    it('should not log in a user with incorrect credentials', () => {})
+    it('should not log in a user with incorrect credentials', () => {
+      // TODO
+    })
 
-    it('should log out an authenticated user', () => {})
+    it('should log out an authenticated user', () => {
+      // TODO
+    })
   })
 
   describe('Delete User', () => {
-    it('should delete a registered user', () => {})
+    it('should delete a registered user', () => {
+      // TODO
+    })
 
-    it('should throw an error when trying to delete a non-existent user', () => {})
+    it('should throw an error when trying to delete a non-existent user', () => {
+      // TODO
+    })
   })
 })
