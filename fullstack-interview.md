@@ -174,6 +174,14 @@ A few key points to guide you:
 - Please do not try to implement more than one section at a time
 - You can use your own IDE or an online IDE like <https://codesandbox.io/>
 
+**Project setup**
+
+```bash
+cd ./nytimes-frontend-task
+npm install
+npm run dev
+```
+
 #### Section 1 - Fetch list names and display drop down
 
 Lets allow the user to browse the various bestseller lists, we’ll do this by showing a drop down and the user can select which list they want to see.
