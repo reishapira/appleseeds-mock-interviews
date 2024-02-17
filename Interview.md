@@ -1,15 +1,17 @@
 # Fullstack Hands-on exercise
+
 In this assignment we'll be writing a small React application and making some API calls.
 
-## Introduction 
-The goal is to build a basic React application that will perform some queries against the New York Times API endpoint and display some results. 
- 
-The task is structured into several steps that try to resemble how you would normally approach the task of building an app, starting from the most minimal scope, and building your way up to more advanced functionality. 
+## Introduction
+
+The goal is to build a basic React application that will perform some queries against the New York Times API endpoint and display some results.
+
+The task is structured into several steps that try to resemble how you would normally approach the task of building an app, starting from the most minimal scope, and building your way up to more advanced functionality.
 
 ## Books Bestsellers List APIs
-Here is some documentation about the API we’ll be using:
-https://developer.nytimes.com/docs/books-product/1/overview
 
+Here is some documentation about the API we’ll be using:
+<https://developer.nytimes.com/docs/books-product/1/overview>
 
 ```
 Access token
@@ -19,10 +21,10 @@ Access token
 The Best Sellers API has two endpoints which we will use:
 
 ### Bestseller List names (GET)
-https://developer.nytimes.com/docs/books-product/1/routes/lists/names.json/get
 
+<https://developer.nytimes.com/docs/books-product/1/routes/lists/names.json/get>
 
-Returns the List names and the dates that we can query on. 
+Returns the List names and the dates that we can query on.
 
 For example:
 
@@ -35,8 +37,8 @@ curl 'https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=xxx' \
   -H 'Accept: application/json, text/plain, */*'
 ```
 
-
 Axios example:
+
 ```javascript
 const response = await axios.get('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=xxx')
 
@@ -73,17 +75,19 @@ Example response:
 ```
 
 ### Books in a specific Bestseller List (GET)
-https://developer.nytimes.com/docs/books-product/1/routes/lists/%7Bdate%7D/%7Blist%7D.json/get
 
+<https://developer.nytimes.com/docs/books-product/1/routes/lists/%7Bdate%7D/%7Blist%7D.json/get>
 
 Returns best selling books, in a specific list, on a specific date.
 
 cURL example
+
 ```bash
 curl 'https://api.nytimes.com/svc/books/v3/lists/2024-02-25/combined-print-and-e-book-nonfiction.json?offset=0&api-key=xxx' 
 ```
 
 Axios example
+
 ```javascript
 const response = await axios.get('https://api.nytimes.com/svc/books/v3/lists/2024-02-25/combined-print-and-e-book-nonfiction.json?api-key=xxx&offset=0');
 
@@ -92,6 +96,7 @@ console.log(response.data);
 ```
 
 Example response
+
 ```json
 {
   "status": "OK",
@@ -124,26 +129,27 @@ Example response
 }
 ```
 
-### Paging 
+### Paging
 
-Paging is controlled by the offset query parameter. Each page will return 20 results, the offset parameter defaults to 0, and should be updated in increments of 20. 
-
+Paging is controlled by the offset query parameter. Each page will return 20 results, the offset parameter defaults to 0, and should be updated in increments of 20.
 
 <https://api.nytimes.com/svc/books/v3/lists/2024-02-25/combined-print-and-e-book-nonfiction.json?offset=0&api-key=xxx>
 
+## Coding Task
 
-## Coding Task 
-Create a React application that has a single page similar to the mock ups presented below. 
- 
-A few key points to guide you: 
-- UI does not have to look pretty - we will not be focusing on the visuals 
-- Your focus should be on fast execution and functionality 
-- You can use any 3rd-party library in addition to React 
-- This is not a memorization task - feel free to use any online documentation, Google, StackOverflow, etc. 
-- Please do not try to implement more than one section at a time 
-- You can use your own IDE or an online IDE like https://codesandbox.io/ 
+Create a React application that has a single page similar to the mock ups presented below.
+
+A few key points to guide you:
+
+- UI does not have to look pretty - we will not be focusing on the visuals
+- Your focus should be on fast execution and functionality
+- You can use any 3rd-party library in addition to React
+- This is not a memorization task - feel free to use any online documentation, Google, StackOverflow, etc.
+- Please do not try to implement more than one section at a time
+- You can use your own IDE or an online IDE like <https://codesandbox.io/>
 
 ### Section 1 - Fetch list names and display drop down
+
 Lets allow the user to browse the various bestseller lists, we’ll do this by showing a drop down and the user can select which list they want to see.
 
 1. Fetch the names of all the bestseller lists
@@ -151,77 +157,67 @@ Lets allow the user to browse the various bestseller lists, we’ll do this by s
 
 ![alt text](./images/section1.png)
 
-Section 2 - Fetch books from list and display them
+### Section 2 - Fetch books from list and display them
+
 Once the user has selected a list, let's fetch all the books from that list and display them.
-Instructions 
-When the user selects a list, fetch the books in the list, for the latest date available
-Display the data in an HTML <table/> with 4 columns 
-Title 
-Author
-Amazon Link (if available)
-Apple Books Link (if available)
 
+1. When the user selects a list, fetch the books in the list, for the latest date available
+2. Display the data in an HTML <table/> with 4 columns
+   1. Title
+   2. Author
+   3. Amazon Link (if available)
+   4. Apple Books Link (if available)
+3. Make the two links clickable
 
-Let's make the two links clickable
+![alt text](./images/section2.png)
 
+### Section 3 - Append next page results to the table
 
+1. Add a "Next" button. When clicked, we should fetch the next page from the API and append / add the new items from the response to the displayed items
+2. There is no need to show the table with paging controls, we’ll just get the next page and append its items to what we’ve already fetched
 
+![alt text](./images/section3.png)
 
+### Section 4 - Filter items
 
+1. Add a text box in the top-right corner of the table, this will be the filter input
+2. When text is inputted, filter the book if they have matching text in their Title column
+3. Add a label to indicate how many items are filtered, i.e. "Showing X out of Y books"
 
+![alt text](./images/section4.png)
 
- 
+### Section 5 - Highlighting filter text
 
-Section 3 - Append next page results to the table
-Instructions 
-Add a "Next" button. When clicked, we should fetch the next page from the API and append / add the new items from the response to the displayed items
-There is no need to show the table with paging controls, we’ll just get the next page and append its items to what we’ve already fetched 
+1. The filter input text should be highlighted in the Title column in the filtered results
 
+![alt text](./images/section5.png)
 
+### Section 6 - Fetching many items (discussion)
 
+Instead of fetching just 20 books per request, let's keep querying the API until we get 1000 books, and then show them all to the user.
 
-Section 4 - Filter items
-Add a text box in the top-right corner of the table, this will be the filter input 
-When text is inputted, filter the book if they have matching text in their Title column 
-Add a label to indicate how many items are filtered, i.e. "Showing X out of Y books" 
+Question - What kind of UI improvements could we implement to mitigate time-consuming requests and the inherent performance problems that occur when displaying a large amount of data?
 
+## Node / Backend questions pool
 
-
-
-Section 5 - Highlighting filter text (optional)
-Instructions 
-The filter input text should be highlighted in the Title column in the filtered results 
-
-
-
-
-
-
-Section 6 - Fetching many items (discussion) 
-Instead of fetching just 20 books per request, let's keep querying the API until we get 1000 books, and then show them all to the user. 
- 
-Question - What kind of UI improvements could we implement to mitigate time-consuming requests and the inherent performance problems that occur when displaying a large amount of data? 
-
-Node / Backend questions pool
 We’ll pick a few topics here and discuss briefly
 
-
-Testing - How would you approach testing a Node.js application? 
-What testing frameworks or libraries would you use, and what types of tests would you write?
-Are you familiar with unit tests?
-Test Driven Design (TDD) - can you think of any advantages this approach has?
-Authentication & Authorization - How would you handle authentication and authorization in a Node.js application? What libraries or techniques would you use?
-Databases - Describe the role of databases in web applications. 
-What are some common types of databases used in the backend
-What factors might influence the choice of database for a particular project?
-Middleware - explain the concept of middleware in the context of Express.js. How does it work and what are some use cases for middleware?
-Async operations - what are asynchronous operations good for in Node.js? Can you think of an example of where this would come in handy?
-RESTful API - What is RESTful API design, and why is it important in building scalable and maintainable web applications? 
-Can you provide an example of designing a RESTful API endpoint?
-GraphQL - are you familiar with it, can you compare between REST and GraphQL?
-Scalability - Explain the concept of scalability in the context of backend development. What are some strategies or technologies that can be used to handle increasing load and ensure high availability of a web application
-Websockets
-What are WebSockets, and how do they differ from traditional HTTP communication? Can you provide an example of a use case where WebSockets would be beneficial in a Node.js application?
-Queued workers - are you familiar with this concept? Where would queued workers be helpful?
-
-
+1. **Testing** - How would you approach testing a Node.js application?
+   1. What testing frameworks or libraries would you use, and what types of tests would you write?
+   1. Are you familiar with unit tests?
+   1. Test Driven Design (TDD) - can you think of any advantages this approach has?
+2. **Authentication & Authorization** - How would you handle authentication and authorization in a Node.js application? What libraries or techniques would you use?
+   1. What's the difference between these two concepts?
+3. **Databases** - Describe the role of databases in web applications.
+   1. What are some common types of databases used in the backend
+   2. What factors might influence the choice of database for a particular project?
+4. **Middleware** - explain the concept of middleware in the context of Express.js. How does it work and what are some use cases for middleware?
+5. Async operations - what are asynchronous operations good for in Node.js? Can you think of an example of where this would come in handy?
+6. **RESTful API**
+   1. What is RESTful API design, and why is it important in building scalable and maintainable web applications?
+   2. Can you provide an example of designing a RESTful API endpoint?
+7. **GraphQL** - are you familiar with it, can you compare between REST and GraphQL?
+8. **Scalability** - Explain the concept of scalability in the context of backend development. What are some strategies or technologies that can be used to handle increasing load and ensure high availability of a web application
+9. **Websockets**
+10. What are WebSockets, and how do they differ from traditional HTTP communication? Can you provide an example of a use case where WebSockets would be beneficial in a Node.js application?
+11. **Queued workers** - are you familiar with this concept? Where would queued workers be helpful?
