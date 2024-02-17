@@ -1,14 +1,40 @@
-# Fullstack Hands-on exercise
+
+# Fullstack hands-on interview
+
+During this interview we'll be doing a few coding exercises, as well as discuss some general topics.
+
+- [Fullstack hands-on interview](#fullstack-hands-on-interview)
+  - [NY Times Bestsellers List React exercise](#ny-times-bestsellers-list-react-exercise)
+    - [Introduction](#introduction)
+    - [Books Bestsellers List APIs](#books-bestsellers-list-apis)
+    - [Bestseller List names (GET)](#bestseller-list-names-get)
+    - [Books in a specific Bestseller List (GET)](#books-in-a-specific-bestseller-list-get)
+    - [Paging](#paging)
+    - [Coding Task](#coding-task)
+      - [Section 1 - Fetch list names and display drop down](#section-1---fetch-list-names-and-display-drop-down)
+      - [Section 2 - Fetch books from list and display them](#section-2---fetch-books-from-list-and-display-them)
+      - [Section 3 - Append next page results to the table](#section-3---append-next-page-results-to-the-table)
+      - [Section 4 - Filter items](#section-4---filter-items)
+      - [Section 5 - Highlighting filter text](#section-5---highlighting-filter-text)
+      - [Section 6 - Fetching many items (discussion)](#section-6---fetching-many-items-discussion)
+  - [TDD Unit Tests Exercise](#tdd-unit-tests-exercise)
+      - [Step 1: Understanding the Requirements](#step-1-understanding-the-requirements)
+      - [Step 2: Writing Unit Tests](#step-2-writing-unit-tests)
+      - [Step 3: Running the Initial Tests (Red Phase)](#step-3-running-the-initial-tests-red-phase)
+      - [Step 4: Implementing the Code](#step-4-implementing-the-code)
+  - [Node / Backend questions pool](#node--backend-questions-pool)
+
+## NY Times Bestsellers List React exercise
 
 In this assignment we'll be writing a small React application and making some API calls.
 
-## Introduction
+### Introduction
 
 The goal is to build a basic React application that will perform some queries against the New York Times API endpoint and display some results.
 
 The task is structured into several steps that try to resemble how you would normally approach the task of building an app, starting from the most minimal scope, and building your way up to more advanced functionality.
 
-## Books Bestsellers List APIs
+### Books Bestsellers List APIs
 
 Here is some documentation about the API we’ll be using:
 <https://developer.nytimes.com/docs/books-product/1/overview>
@@ -135,7 +161,7 @@ Paging is controlled by the offset query parameter. Each page will return 20 res
 
 <https://api.nytimes.com/svc/books/v3/lists/2024-02-25/combined-print-and-e-book-nonfiction.json?offset=0&api-key=xxx>
 
-## Coding Task
+### Coding Task
 
 Create a React application that has a single page similar to the mock ups presented below.
 
@@ -148,7 +174,7 @@ A few key points to guide you:
 - Please do not try to implement more than one section at a time
 - You can use your own IDE or an online IDE like <https://codesandbox.io/>
 
-### Section 1 - Fetch list names and display drop down
+#### Section 1 - Fetch list names and display drop down
 
 Lets allow the user to browse the various bestseller lists, we’ll do this by showing a drop down and the user can select which list they want to see.
 
@@ -157,7 +183,7 @@ Lets allow the user to browse the various bestseller lists, we’ll do this by s
 
 ![alt text](./images/section1.png)
 
-### Section 2 - Fetch books from list and display them
+#### Section 2 - Fetch books from list and display them
 
 Once the user has selected a list, let's fetch all the books from that list and display them.
 
@@ -171,14 +197,14 @@ Once the user has selected a list, let's fetch all the books from that list and 
 
 ![alt text](./images/section2.png)
 
-### Section 3 - Append next page results to the table
+#### Section 3 - Append next page results to the table
 
 1. Add a "Next" button. When clicked, we should fetch the next page from the API and append / add the new items from the response to the displayed items
 2. There is no need to show the table with paging controls, we’ll just get the next page and append its items to what we’ve already fetched
 
 ![alt text](./images/section3.png)
 
-### Section 4 - Filter items
+#### Section 4 - Filter items
 
 1. Add a text box in the top-right corner of the table, this will be the filter input
 2. When text is inputted, filter the book if they have matching text in their Title column
@@ -186,17 +212,45 @@ Once the user has selected a list, let's fetch all the books from that list and 
 
 ![alt text](./images/section4.png)
 
-### Section 5 - Highlighting filter text
+#### Section 5 - Highlighting filter text
 
 1. The filter input text should be highlighted in the Title column in the filtered results
 
 ![alt text](./images/section5.png)Fu
 
-### Section 6 - Fetching many items (discussion)
+#### Section 6 - Fetching many items (discussion)
 
 Instead of fetching just 20 books per request, let's keep querying the API until we get 1000 books, and then show them all to the user.
 
 Question - What kind of UI improvements could we implement to mitigate time-consuming requests and the inherent performance problems that occur when displaying a large amount of data?
+
+## TDD Unit Tests Exercise
+
+In this exercise, we will follow the principles of Test-Driven Development (TDD) to create a `Calculator` class. 
+
+TDD is a software development methodology that emphasizes writing tests before writing the implementation code. This approach helps ensure thorough testing, maintainable code, and improved overall software quality.
+
+#### Step 1: Understanding the Requirements
+
+Define the proposed interface for the Calculator class, which supports addition, subtraction, multiplication, division, and clearing functionality.
+
+#### Step 2: Writing Unit Tests
+
+Write unit tests that specify the desired behavior of the code. Cover different scenarios, including positive and edge cases.
+
+#### Step 3: Running the Initial Tests (Red Phase)
+
+Run the tests and expect them to fail since the implementation code is not yet written.
+
+```bash
+npm run test-calculator
+```
+
+#### Step 4: Implementing the Code
+
+Write the simplest code that makes the failing tests pass. 
+
+Implement each operation iteratively based on failing tests, until all tests pass.
 
 ## Node / Backend questions pool
 
@@ -205,7 +259,7 @@ We’ll pick a few topics here and discuss briefly
 1. **Testing** - How would you approach testing a Node.js application?
    1. What testing frameworks or libraries would you use, and what types of tests would you write?
    1. Are you familiar with unit tests?
-   1. Test Driven Design (TDD) - can you think of any advantages this approach has?
+   1. Test Driven Development (TDD) - can you think of any advantages this approach has?
 2. **Authentication & Authorization** - How would you handle authentication and authorization in a Node.js application? What libraries or techniques would you use?
    1. What's the difference between these two concepts?
 3. **Databases** - Describe the role of databases in web applications.

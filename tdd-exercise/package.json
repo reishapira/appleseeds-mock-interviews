@@ -5,6 +5,8 @@
   "main": "calculator.js",
   "type": "module",
   "scripts": {
+    "test-calculator": "mocha ./test/test_calculator",
+    "test-authenticator": "mocha ./test/test_authenticator",
     "test": "mocha"
   },
   "author": "",

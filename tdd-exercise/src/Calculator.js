@@ -3,27 +3,19 @@ export class Calculator {
     this.value = value
   }
 
-  add(num) {
-    this.value += num
-  }
+  // Adds a number to the current value
+  add(num) {}
 
-  subtract(num) {
-    this.value -= num
-  }
+  // Subtracts a number from the current value
+  subtract(num) {}
 
-  multiply(num) {
-    this.value *= num
-  }
+  // Multiplies the current value by a number
+  multiply(num) {}
 
-  divide(num) {
-    if (num === 0) {
-      throw new Error('Cannot divide by zero')
-    }
+  // Divides the current value by a number
+  // Should raise an error 'Cannot divide by zero' if num is zero
+  divide(num) {}
 
-    this.value /= num
-  }
-
-  clear() {
-    this.value = 0
-  }
+  // Clears the current value and resets it to 0
+  clear() {}
 }
