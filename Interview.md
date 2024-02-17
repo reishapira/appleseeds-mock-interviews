@@ -155,7 +155,7 @@ Lets allow the user to browse the various bestseller lists, we’ll do this by s
 1. Fetch the names of all the bestseller lists
 1. Display the names in a dropdown to allow the user to select one
 
-![alt text](./images/section1.png)
+![alt text](./images/section1.png){: style="width: 75%; height: auto;"}
 
 ### Section 2 - Fetch books from list and display them
 
@@ -169,14 +169,14 @@ Once the user has selected a list, let's fetch all the books from that list and 
    4. Apple Books Link (if available)
 3. Make the two links clickable
 
-![alt text](./images/section2.png)
+![alt text](./images/section2.png){: style="width: 75%; height: auto;"}
 
 ### Section 3 - Append next page results to the table
 
 1. Add a "Next" button. When clicked, we should fetch the next page from the API and append / add the new items from the response to the displayed items
 2. There is no need to show the table with paging controls, we’ll just get the next page and append its items to what we’ve already fetched
 
-![alt text](./images/section3.png)
+![alt text](./images/section3.png){: style="width: 75%; height: auto;"}
 
 ### Section 4 - Filter items
 
@@ -184,13 +184,13 @@ Once the user has selected a list, let's fetch all the books from that list and 
 2. When text is inputted, filter the book if they have matching text in their Title column
 3. Add a label to indicate how many items are filtered, i.e. "Showing X out of Y books"
 
-![alt text](./images/section4.png)
+![alt text](./images/section4.png){: style="width: 75%; height: auto;"}
 
 ### Section 5 - Highlighting filter text
 
 1. The filter input text should be highlighted in the Title column in the filtered results
 
-![alt text](./images/section5.png)
+![alt text](./images/section5.png){: style="width: 75%; height: auto;"}
 
 ### Section 6 - Fetching many items (discussion)
 
