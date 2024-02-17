@@ -1,0 +1,17 @@
+{
+  "name": "calculator-tdd-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculator.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0",
+    "prettier": "^3.2.5"
+  }
+}
